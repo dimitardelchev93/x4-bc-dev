@@ -1,6 +1,9 @@
 {
     "publisher": "dimitardelchev93",
-    "repository": "https://github.com/dimitardelchev93/x4-bc-dev",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dimitardelchev93/x4-bc-dev"
+    },
     "name": "x4-bc-dev",
     "displayName": "X4 BC Dev",
     "description": "Makes X4 BC development easy",

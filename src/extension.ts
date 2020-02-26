@@ -48,7 +48,7 @@ function startTscWatch(): void {
         vscode.TaskScope.Workspace,
         'Watch TSC',
         'npm',
-        new vscode.ShellExecution('./node_modules/.bin/tsc --watch'),
+        new vscode.ShellExecution('node_modules/.bin/tsc --watch'),
         '$tsc-watch'
     );
 
