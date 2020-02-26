@@ -1,4 +1,4 @@
-# x4-bc-dev README
+# x4-bc-dev
 
 Makes X4 BC development easy
 
@@ -27,6 +27,10 @@ To use the extension you need have 'x4-bc' as your root project folder
 None for now
 
 ## Release Notes
+
+### 1.1.1
+
+Fix watch task command path
 
 ### 1.1.0
 
