@@ -8,12 +8,12 @@ const {
     tasks,
     workspace
 } = vscode;
+const settings = workspace.getConfiguration()[pjson.name];
 const info = {
     id: pjson.name,
     name: pjson.displayName,
     project: 'x4-bc',
     command: pjson.contributes.commands[0].command,
-    autostart: true,
     login: {
         flag: false,
         username: 'TheDelchev',
@@ -52,13 +52,7 @@ function startTscWatch(): void {
         '$tsc-watch'
     );
 
-    tasks.executeTask(task).then(e => {
-        window.showInformationMessage('Your watch has began.');
-    });
-
-    tasks.onDidEndTask(e => {
-        window.showInformationMessage('Your watch has ended.');
-    });
+    tasks.executeTask(task);
 }
 
 function startPackageVersionWatch(): void {
@@ -89,10 +83,9 @@ export function activate(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(disposable);
 
-    if (info.autostart) {
+    if (settings.autostart) {
         commands.executeCommand(info.command);
     }
-
 }
 
 export function deactivate() { }

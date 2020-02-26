@@ -1,0 +1,58 @@
+{
+    "publisher": "dimitardelchev93",
+    "repository": "https://github.com/dimitardelchev93/x4-bc-dev",
+    "name": "x4-bc-dev",
+    "displayName": "X4 BC Dev",
+    "description": "Makes X4 BC development easy",
+    "version": "1.1.0",
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.runX4Dev",
+        "workspaceContains:**/x4-app.json"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "configuration": {
+            "title": "X4 BC Dev",
+            "properties": {
+                "x4-bc-dev.autostart": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Autostart"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "extension.runX4Dev",
+                "title": "Run X4 Development Service"
+            }
+        ],
+        "scripts": {
+            "vscode:prepublish": "npm run compile",
+            "compile": "tsc -p ./",
+            "lint": "eslint src --ext ts",
+            "watch": "tsc -watch -p ./",
+            "pretest": "npm run compile && npm run lint",
+            "test": "node ./out/test/runTest.js"
+        },
+        "devDependencies": {
+            "@types/glob": "^7.1.1",
+            "@types/mocha": "^7.0.1",
+            "@types/node": "^12.11.7",
+            "@types/vscode": "^1.42.0",
+            "eslint": "^6.8.0",
+            "@typescript-eslint/parser": "^2.18.0",
+            "@typescript-eslint/eslint-plugin": "^2.18.0",
+            "glob": "^7.1.6",
+            "mocha": "^7.0.1",
+            "typescript": "^3.7.5",
+            "vscode-test": "^1.3.0"
+        }
+    }
+}
