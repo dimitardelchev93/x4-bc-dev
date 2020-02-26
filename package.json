@@ -7,7 +7,7 @@
     "name": "x4-bc-dev",
     "displayName": "X4 BC Dev",
     "description": "Makes X4 BC development easy",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "engines": {
         "vscode": "^1.42.0"
     },
